@@ -1,0 +1,130 @@
+nav {
+    position: absolute;
+    width: 100%;
+    top: 1rem;
+    left: 0;
+    z-index: 99;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav li+li {
+    border-left: 1px solid #fff
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 0 2rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+header {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background: rgb(33,33,33);
+    background: linear-gradient(-45deg, rgba(33,33,33,1) 0%, rgba(33,33,33,1) 35%, rgba(41,41,41,1) 35%, rgba(41,41,41,1) 65%, rgba(33,33,33,1) 65%, rgba(33,33,33,1) 100%);
+}
+
+.header-content {
+    position: absolute;
+    color: #fff;
+    top: 45%;
+    left: 50%;
+    text-align: center;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.header-content h1 {
+    font-size: 4rem;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.header-content p, .header-content a, .header-content button {
+    font-size: 1.5rem;
+}
+
+.header-content img {
+    width: 25%;
+    margin-bottom: -2.5rem;
+}
+
+.header-content a {
+    color: #fff;
+}
+
+.header-content button {
+    display: block;
+    padding: 1rem 4rem;
+    background: none;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    margin: 1.5rem auto;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.header-content button:hover {
+    background: rgba(255,255,255, 0.1);
+}
+
+.header-content button > small {
+    display: block;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+* {
+    font-family: "Open Sans", sans-serif;
+}
+
+@media only screen and (max-width: 1200px) {
+    .header-content h1 {
+        font-size: 4vw;
+    }
+    .header-content img {
+        width: 25%;
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    nav ul li a {
+        font-size: 0.8rem;
+    }
+    nav ul li {
+        display: inline-block;
+        padding: 0 0.5rem;
+    }
+    nav ul {
+
+    }
+    header {
+        background: rgb(33,33,33);
+    }
+    .header-content img {
+        width: 75%;
+        margin-bottom: -1rem;
+    }
+    .header-content p, .header-content a, .header-content button {
+        font-size: 1rem;
+    }
+    .header-content button > small {
+        font-size: 0.7rem;
+    }
+    .header-content button {
+        padding: 1rem 2rem;
+    }
+    .header-content h1 {
+        font-size: 1.6rem;
+    }
+}

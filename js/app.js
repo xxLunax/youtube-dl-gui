@@ -1,5 +1,3 @@
-const latestVersion = "2.0.0"
-
 function getOS() {
     let userAgent = window.navigator.userAgent,
         platform = window.navigator.platform,
@@ -39,10 +37,6 @@ async function httpGet(url) {
     }))
 }
 
-function getAssetNames() {
-
-}
-
 function getAssetDownload(os, release) {
     const version = release.tag_name.substring(1)
     let assetName;
@@ -66,20 +60,19 @@ function getAssetDownload(os, release) {
 
 async function setDownloadButton() {
     const os = getOS();
-    if (os !== "other") {
-        const versionData = await httpGet("https://api.github.com/repos/jely2002/youtube-dl-gui/releases/latest");
-        if(versionData == null) {
-            document.getElementById("download-type").innerHTML = "For " + os;
-            document.getElementById("download-button").addEventListener('click', () => {
-                 window.location.href = 'https://github.com/jely2002/youtube-dl-gui/releases/latest'
-            })
-        } else {
-            const release = JSON.parse(versionData)
-            document.getElementById("download-type").innerHTML = release.tag_name + " - " + os;
-            document.getElementById("download-button").addEventListener('click', () => {
-                window.location = getAssetDownload(os, release)
-            })
-        }
+    const versionData = await httpGet("https://api.github.com/repos/jely2002/youtube-dl-gui/releases/latest");
+    if(versionData == null) {
+        if(os === "other") document.getElementById("download-type").innerHTML = "";
+        else document.getElementById("download-type").innerHTML = "For " + os;
+        document.getElementById("download-button").addEventListener('click', () => {
+            window.location.href = 'https://github.com/jely2002/youtube-dl-gui/releases/latest'
+        })
+    } else {
+        const release = JSON.parse(versionData)
+        document.getElementById("download-type").innerHTML = release.tag_name + " - " + os;
+        document.getElementById("download-button").addEventListener('click', () => {
+            window.location = getAssetDownload(os, release)
+        })
     }
 }
 

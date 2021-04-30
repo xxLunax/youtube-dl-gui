@@ -1,13 +1,32 @@
+body {
+    background: #292929;
+}
+
+.hamburger {
+    color: #fff;
+    padding: .5rem;
+    border: 1px solid white;
+    border-radius: 6px;
+    font-size: 2rem;
+    margin-left: 2rem;
+    display: none;
+    background: none;
+    transition: 0.2s;
+}
+
+.hamburger:hover {
+    background: rgba(255,255,255, 0.1);
+}
+
 nav {
-    position: absolute;
     width: 100%;
-    top: 1rem;
-    left: 0;
-    z-index: 99;
+    padding: 1rem 0;
+    background-color: #212121;
 }
 
 nav ul {
     list-style-type: none;
+    transition: 2s;
 }
 
 nav li+li {
@@ -26,20 +45,39 @@ nav ul li a {
 }
 
 header {
-    height: 100vh;
+    height: 70vh;
     width: 100%;
-    position: relative;
-    background: rgb(33,33,33);
-    background: linear-gradient(-45deg, rgba(33,33,33,1) 0%, rgba(33,33,33,1) 35%, rgba(41,41,41,1) 35%, rgba(41,41,41,1) 65%, rgba(33,33,33,1) 65%, rgba(33,33,33,1) 100%);
+    background: #212121;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skewed {
+    height: 20vh;
+    width: 100%;
+    display: block;
+    background: #212121;
+    transform: skewY(-3deg) translateY(-50%);
+    z-index: 1;
+}
+
+.header-image img {
+    width: 50vw;
+    margin-right: 4rem;
+}
+
+.header-image {
+    flex-grow: 1;
+    z-index: 2;
+    margin-top: 4rem;
 }
 
 .header-content {
-    position: absolute;
     color: #fff;
-    top: 45%;
-    left: 50%;
     text-align: center;
-    transform: translateY(-50%) translateX(-50%);
+    flex-grow: 1;
+    z-index: 2;
 }
 
 .header-content h1 {
@@ -83,48 +121,184 @@ header {
     margin-top: 0.5rem;
 }
 
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card {
+    color: #fff;
+    background-color: #212121;
+    padding: 2rem 4rem;
+    border-radius: 12px;
+    width: 20%;
+    margin-top: 4rem;
+}
+
+.card i {
+    font-size: 6rem;
+}
+
+.card hr {
+    width: 70%;
+    margin: 2rem auto;
+}
+
+.card p {
+    font-size: 1.5rem;
+}
+
+.card h2 {
+    font-size: 4rem;
+    font-weight: 400;
+    margin: 1rem 0;
+}
+
+.about {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 8rem auto 4rem;
+}
+
+.screenshot {
+    margin: auto 5rem;
+}
+
+.screenshot img {
+    -webkit-box-shadow: 0 0 11px 6px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 11px 6px rgba(0, 0, 0, .2);
+    width: 100%;
+}
+
+.description {
+    flex-grow: 1;
+    color: #fff;
+}
+
+.description li:nth-child(even) {
+    margin-left: 2rem;
+}
+
+.description li:nth-child(odd) {
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.description ul {
+    list-style-type: none;
+}
+
+.description h1 {
+    font-size: 4rem;
+}
+
+.description p, .description li {
+    font-size: 1.5rem;
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: #212121;
+    color: #fff;
+    font-size: 1.5rem;
+    margin-top: 4rem;
+}
+
+footer p, footer > a {
+    margin: 2rem 4rem;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
 * {
     font-family: "Open Sans", sans-serif;
 }
 
 @media only screen and (max-width: 1200px) {
     .header-content h1 {
-        font-size: 4vw;
+        font-size: 3rem;
     }
+}
+
+@media only screen and (max-width: 1000px) {
+    nav ul li {
+        padding: 0;
+        margin-top: 0.5rem;
+        display: block;
+    }
+
+    nav ul {
+       display: none;
+    }
+
+    nav li+li {
+        border-left: none;
+    }
+
+    .hamburger {
+        display: inline-block;
+    }
+
+    header {
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+
+    .header-content {
+        flex-grow: 0;
+    }
+
+    .header-image {
+        display: none;
+    }
+
     .header-content img {
-        width: 25%;
-        margin-bottom: 0;
+        width: 35%;
+    }
+
+    .cards {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+
+    .card {
+        width: 70%;
+        padding: 2rem 2rem;
+    }
+
+    .card h2 {
+        font-size: 3rem;
+    }
+
+    .description h1 {
+        font-size: 3rem;
+    }
+
+    .description ul {
+        padding-inline-start: 0;
+    }
+
+    .screenshot {
+        display: none;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
     }
 }
 
 @media only screen and (max-width: 700px) {
-    nav ul li a {
-        font-size: 0.8rem;
-    }
-    nav ul li {
-        display: inline-block;
-        padding: 0 0.5rem;
-    }
-    nav ul {
 
-    }
-    header {
-        background: rgb(33,33,33);
-    }
-    .header-content img {
-        width: 75%;
-        margin-bottom: -1rem;
-    }
-    .header-content p, .header-content a, .header-content button {
-        font-size: 1rem;
-    }
-    .header-content button > small {
-        font-size: 0.7rem;
-    }
-    .header-content button {
-        padding: 1rem 2rem;
-    }
-    .header-content h1 {
-        font-size: 1.6rem;
-    }
 }

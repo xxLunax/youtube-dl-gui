@@ -62,21 +62,38 @@ async function setDownloadButton() {
     const os = getOS();
     const versionData = await httpGet("https://api.github.com/repos/jely2002/youtube-dl-gui/releases/latest");
     if(versionData == null) {
-        if(os === "other") document.getElementById("download-type").innerHTML = "";
-        else document.getElementById("download-type").innerHTML = "For " + os;
+        const download = 'https://github.com/jely2002/youtube-dl-gui/releases/latest'
+        document.getElementById("download-type").innerHTML = "For " + os;
         document.getElementById("download-button").addEventListener('click', () => {
-            window.location.href = 'https://github.com/jely2002/youtube-dl-gui/releases/latest'
+            window.location.href = download
         })
-    } else {
+        document.getElementById("download-link").setAttribute('href', download)
+    } else if(os !== "other") {
         const release = JSON.parse(versionData)
+        const download = getAssetDownload(os, release)
         document.getElementById("download-type").innerHTML = release.tag_name + " - " + os;
         document.getElementById("download-button").addEventListener('click', () => {
-            window.location = getAssetDownload(os, release)
+            window.location = download
         })
+        document.getElementById("download-link").setAttribute('href', download)
+    } else {
+        const download = "https://github.com/jely2002/youtube-dl-gui/releases/latest"
+        document.getElementById("download-type").style.display = "none"
+        document.getElementById("download-button").addEventListener('click', () => {
+            window.location.href = download
+        })
+        document.getElementById("download-link").setAttribute('href', download)
     }
 }
 
 (function() {
     setDownloadButton().then(() => console.log("Download button configured"));
+    document.getElementById("hamburger").addEventListener('click', () => {
+        const nav = document.getElementById("nav-list")
+        const opened = nav.style.display !== "none"
+        console.log(opened)
+        console.log(opened)
+        nav.style.display = opened ? "none" : "block"
+    })
 }());
 

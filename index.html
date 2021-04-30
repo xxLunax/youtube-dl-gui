@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -17,27 +17,83 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
     <meta name="theme-color" content="#292929">
 </head>
 
 <body>
 <nav>
-    <ul>
-        <li><a href="https://github.com/jely2002/youtube-dl-gui#youtube-dl-gui----">About</a></li>
+    <button type="button" id="hamburger" class="hamburger"><i class="bi bi-list"></i></button>
+    <ul id="nav-list">
+        <li><a href="#about">About</a></li>
+        <li><a id="download-link" href="https://github.com/jely2002/youtube-dl-gui/releases/latest">Download</a></li>
+        <li><a href="https://github.com/jely2002/youtube-dl-gui/wiki">Wiki</a></li>
         <li><a href="https://github.com/jely2002/youtube-dl-gui">GitHub</a></li>
         <li><a rel="noreferrer" href="https://ko-fi.com/jely2002">Donate</a></li>
     </ul>
 </nav>
 <header>
-    <div class="header-content">
+    <section class="header-content">
         <img alt="youtube-dl-gui logo" src="img/icon.png">
         <h1>youtube-dl-gui</h1>
-        <p>Fast | Easy | Stylish</p>
+        <p>Download everything.</p>
         <button id="download-button">Download<small id="download-type">Loading...</small></button>
-        <a href="https://github.com/jely2002/youtube-dl-gui/releases/latest">More downloads</a>
-    </div>
+        <a href="https://github.com/jely2002/youtube-dl-gui/releases">Other versions</a>
+    </section>
+    <section class="header-image">
+        <img alt="youtube-dl-gui shown on a laptop and monitor" src="img/mockup.png">
+    </section>
 </header>
+<div class="skewed"></div>
+
+<article class="cards">
+    <section class="card">
+        <i class="bi bi-film"></i>
+        <hr>
+        <p>Download videos from</p>
+        <h2>1000+</h2>
+        <p>services</p>
+    </section>
+    <section class="card">
+        <i class="bi bi-speedometer2"></i>
+        <hr>
+        <p>Seriously fast</p>
+        <h2>Up to 32</h2>
+        <p>synchronous downloads</p>
+    </section>
+    <section class="card">
+        <i class="bi bi-gear"></i>
+        <hr>
+        <p>Highly customisable</p>
+        <h2>10+</h2>
+        <p>settings</p>
+    </section>
+</article>
+
+<article id="about" class="about">
+    <section class="description">
+        <h1>About</h1>
+        <p>youtube-dl-gui is a cross-platform GUI for youtube-dl made in Electron and Node.js.<br><br> With this app you can download videos and playlists in all kind of formats, from just about every major website.   </p>
+        <h1>Dependencies</h1>
+        <ul>
+            <li>Windows:</li>
+            <li>- Microsoft visual C++ Redistributable 2010</li>
+            <li>MacOS:</li>
+            <li>- Python (comes pre-installed)</li>
+            <li>Linux:</li>
+            <li>- Python (mostly pre-installed)</li>
+        </ul>
+    </section>
+    <section class="screenshot">
+        <img alt="screenshot of the youtube-dl-gui app" src="img/screenshot.png">
+    </section>
+</article>
+
+<footer>
+    <a href="mailto:ytdlgui@jelleglebbeek.com">Contact</a>
+    <p>Made with &#10084;&#65039; by <a href="https://jelleglebbeek.com">Jelle Glebbeek</a></p>
+</footer>
 <script src="js/app.js"></script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K174QBZ4HE"></script>

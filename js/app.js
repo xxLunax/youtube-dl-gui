@@ -84,6 +84,11 @@ async function setDownloadButton() {
         })
         document.getElementById("download-link").setAttribute('href', download)
     }
+    if(os !== "Windows") {
+        document.getElementById("msBadge").style.display = "none"
+    } else {
+        document.getElementById("otherVersions").style.display = "none"
+    }
 }
 
 (function() {
@@ -91,7 +96,6 @@ async function setDownloadButton() {
     document.getElementById("hamburger").addEventListener('click', () => {
         const nav = document.getElementById("nav-list")
         const opened = nav.style.display !== "none"
-        console.log(opened)
         console.log(opened)
         nav.style.display = opened ? "none" : "block"
     })

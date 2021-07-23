@@ -99,5 +99,8 @@ async function setDownloadButton() {
         console.log(opened)
         nav.style.display = opened ? "none" : "block"
     })
+    document.getElementById("msBadge").addEventListener("click", () => {
+        gtag('event', 'microsoft_badge');
+    });
 }());
 

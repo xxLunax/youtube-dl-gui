@@ -81,10 +81,20 @@ header {
     z-index: 2;
 }
 
+.header-content p {
+    margin-top: 2rem;
+}
+
 .header-content h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 400;
-    margin-bottom: 0;
+    margin-bottom: 0.2rem;
+}
+
+.header-content h6 {
+    font-size: 1.5rem;
+    filter: brightness(0.7);
+    margin: 0;
 }
 
 .header-content p, .header-content a, .header-content button {

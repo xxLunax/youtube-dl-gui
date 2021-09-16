@@ -42,13 +42,13 @@ function getAssetDownload(os, release) {
     let assetName;
     switch (os) {
         case "Windows":
-            assetName = "YouTube-Downloader-GUI-Setup-" + version + ".exe"
+            assetName = "Open-Video-Downloader-Setup-" + version + ".exe"
             break
         case "MacOS":
-            assetName = "YouTube-Downloader-GUI-" + version + ".dmg"
+            assetName = "Open-Video-Downloader-" + version + ".dmg"
             break
         case "Linux":
-            assetName = "YouTube-Downloader-GUI-" + version + ".AppImage"
+            assetName = "Open-Video-Downloader-" + version + ".AppImage"
     }
 
     for(const asset of release.assets) {
